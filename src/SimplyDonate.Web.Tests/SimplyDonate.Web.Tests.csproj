@@ -21,4 +21,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SimplyDonate.Web\SimplyDonate.Web.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -21,4 +21,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SimplyDonate.DataAccess\SimplyDonate.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>
