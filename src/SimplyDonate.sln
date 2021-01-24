@@ -23,6 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Projects", "01 Projects"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Tests", "02 Tests", "{E0511166-3BE7-45B8-A606-5B43A7EB44B2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 Other", "00 Other", "{F847853F-2D93-4471-A2A6-78F7D58534D2}"
+ProjectSection(SolutionItems) = preProject
+	..\README.md = ..\README.md
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
