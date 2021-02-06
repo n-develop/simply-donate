@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace SimplyDonate.DataAccess
+namespace SimplyDonate.DataAccess.Database.Entities
 {
-    public class Donation
+    public class DonationEntity
     {
         [Key]
         public int Id { get; set; }
