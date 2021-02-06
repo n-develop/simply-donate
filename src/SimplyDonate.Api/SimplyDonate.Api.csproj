@@ -5,9 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <ProjectReference Include="..\SimplyDonate.Core\SimplyDonate.Core.csproj" />
     <ProjectReference Include="..\SimplyDonate.DataAccess\SimplyDonate.DataAccess.csproj" />
