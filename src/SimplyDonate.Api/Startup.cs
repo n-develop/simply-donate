@@ -58,6 +58,12 @@ namespace SimplyDonate.Api
 
             app.UseRouting();
 
+            // TODO this must be removed before we go live with this. It's just here to make local development easier for the start
+            app.UseCors(builder =>
+            {
+                builder.WithOrigins("http://localhost:8080").AllowAnyMethod().AllowAnyHeader();
+            });
+            
             app.UseAuthentication();
             app.UseAuthorization();
 
