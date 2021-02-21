@@ -11,7 +11,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\SimplyDonate.Core\SimplyDonate.Core.csproj" />
     <ProjectReference Include="..\SimplyDonate.DataAccess\SimplyDonate.DataAccess.csproj" />
   </ItemGroup>
 
