@@ -1,4 +1,5 @@
 using SimplyDonate.Api.Controllers;
+using SimplyDonate.Api.Models;
 using Xunit;
 
 namespace SimplyDonate.Api.Tests.Controllers.DonationsControllerTests
@@ -9,6 +10,16 @@ namespace SimplyDonate.Api.Tests.Controllers.DonationsControllerTests
         public void ItExists()
         {
             var controller = new DonationsController();
+        }
+
+        [Fact]
+        public void ItHasGet()
+        {
+            // Arrange
+            var controller = new DonationsController();
+
+            // Act
+            controller.Get();
         }
     }
 }
