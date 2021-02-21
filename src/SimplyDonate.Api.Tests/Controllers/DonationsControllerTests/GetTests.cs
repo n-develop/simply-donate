@@ -1,5 +1,6 @@
+using FluentAssertions;
+using Microsoft.AspNetCore.Mvc;
 using SimplyDonate.Api.Controllers;
-using SimplyDonate.Api.Models;
 using Xunit;
 
 namespace SimplyDonate.Api.Tests.Controllers.DonationsControllerTests
@@ -20,6 +21,19 @@ namespace SimplyDonate.Api.Tests.Controllers.DonationsControllerTests
 
             // Act
             controller.Get();
+        }
+
+        [Fact]
+        public void ItReturnsOkObjectResult()
+        {
+            // Arrange
+            var controller = new DonationsController();
+
+            // Act
+            var result = controller.Get();
+            
+            // Assert
+            result.Should().BeOfType<OkObjectResult>();
         }
     }
 }
