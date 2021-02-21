@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
+using NSubstitute;
 using SimplyDonate.Api.Controllers;
 using SimplyDonate.Api.Models;
+using SimplyDonate.Api.Services;
 using Xunit;
 
 namespace SimplyDonate.Api.Tests.Controllers.DonationsControllerTests
@@ -13,7 +15,7 @@ namespace SimplyDonate.Api.Tests.Controllers.DonationsControllerTests
 
         public GetTests()
         {
-            var donationsService = new TestDonationService();
+            var donationsService = Substitute.For<IDonationService>();
             _controller = new DonationsController(donationsService);
         }
 

@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using FluentAssertions;
+using NSubstitute;
 using SimplyDonate.Api.Controllers;
-using SimplyDonate.Api.Models;
 using SimplyDonate.Api.Services;
 using Xunit;
 
@@ -13,21 +12,13 @@ namespace SimplyDonate.Api.Tests.Controllers.DonationsControllerTests
         public void ItAcceptsDonationsService()
         {
             // Arrange
-            var donationsService = new TestDonationService();
+            var donationsService = Substitute.For<IDonationService>();
 
             // Act
             var controller = new DonationsController(donationsService);
 
             // Assert
             controller.Should().NotBeNull();
-        }
-    }
-    
-    public class TestDonationService : IDonationService
-    {
-        public IEnumerable<Donation> GetAll()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
