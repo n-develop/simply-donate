@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using FluentAssertions;
 using SimplyDonate.Api.Controllers;
+using SimplyDonate.Api.Models;
 using SimplyDonate.Api.Services;
 using Xunit;
 
@@ -22,5 +24,10 @@ namespace SimplyDonate.Api.Tests.Controllers.DonationsControllerTests
     }
     
     public class TestDonationService : IDonationService
-    {}
+    {
+        public IEnumerable<Donation> GetAll()
+        {
+            throw new System.NotImplementedException();
+        }
+    }
 }
