@@ -17,6 +17,7 @@ namespace SimplyDonate.Api.Tests.Controllers.DonationsControllerTests
         public GetTests()
         {
             _donationService = Substitute.For<IDonationService>();
+            _donationService.GetAll().Returns(new List<Donation>());
             _sut = new DonationsController(_donationService);
         }
 
@@ -41,6 +42,37 @@ namespace SimplyDonate.Api.Tests.Controllers.DonationsControllerTests
             // Assert
             result.Should().NotBeNull();
             result.Value.Should().BeAssignableTo<IEnumerable<Donation>>();
+        }
+
+        [Fact]
+        public void ItCallsDonationService()
+        {
+            // Arrange
+            // Act
+            _sut.Get();
+
+            // Assert
+            _donationService.Received(1).GetAll();
+        }
+
+        [Fact]
+        public void ItReturnsResultFromDonationService()
+        {
+            // Arrange
+            var donations = new List<Donation>
+            {
+                new()
+                {
+                    Title = "Donation Title", Description = "Donations Description"
+                }
+            };
+            _donationService.GetAll().Returns(donations);
+            
+            // Act
+            var result = _sut.Get() as OkObjectResult;
+
+            // Assert
+            result.Value.Should().BeEquivalentTo(donations);
         }
     }
 }
