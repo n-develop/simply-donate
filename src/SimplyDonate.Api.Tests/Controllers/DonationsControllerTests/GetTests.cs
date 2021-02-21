@@ -10,12 +10,13 @@ namespace SimplyDonate.Api.Tests.Controllers.DonationsControllerTests
     public class GetTests
     {
         private readonly DonationsController _controller;
-        
+
         public GetTests()
         {
-            _controller = new DonationsController();
+            var donationsService = new TestDonationService();
+            _controller = new DonationsController(donationsService);
         }
-        
+
         [Fact]
         public void ItReturnsOkObjectResult()
         {

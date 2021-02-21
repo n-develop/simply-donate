@@ -1,6 +1,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using SimplyDonate.Api.Models;
+using SimplyDonate.Api.Services;
 
 namespace SimplyDonate.Api.Controllers
 {
@@ -8,6 +9,13 @@ namespace SimplyDonate.Api.Controllers
     [Route("[controller]")]
     public class DonationsController : ControllerBase
     {
+        private readonly IDonationService _donationService;
+
+        public DonationsController(IDonationService donationService)
+        {
+            _donationService = donationService;
+        }
+
         [HttpGet]
         public IActionResult Get()
         {
