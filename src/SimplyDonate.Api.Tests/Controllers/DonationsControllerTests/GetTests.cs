@@ -11,12 +11,13 @@ namespace SimplyDonate.Api.Tests.Controllers.DonationsControllerTests
 {
     public class GetTests
     {
-        private readonly DonationsController _controller;
+        private readonly IDonationService _donationService;
+        private readonly DonationsController _sut;
 
         public GetTests()
         {
-            var donationsService = Substitute.For<IDonationService>();
-            _controller = new DonationsController(donationsService);
+            _donationService = Substitute.For<IDonationService>();
+            _sut = new DonationsController(_donationService);
         }
 
         [Fact]
@@ -24,7 +25,7 @@ namespace SimplyDonate.Api.Tests.Controllers.DonationsControllerTests
         {
             // Arrange
             // Act
-            var result = _controller.Get();
+            var result = _sut.Get();
             
             // Assert
             result.Should().BeOfType<OkObjectResult>();
@@ -35,7 +36,7 @@ namespace SimplyDonate.Api.Tests.Controllers.DonationsControllerTests
         {
             // Arrange
             // Act
-            var result = _controller.Get() as OkObjectResult;
+            var result = _sut.Get() as OkObjectResult;
             
             // Assert
             result.Should().NotBeNull();
